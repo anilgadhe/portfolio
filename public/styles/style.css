@@ -3,7 +3,7 @@
   --text-color: black;
   --first-color:#f5f7fa;
   --second-color:#c3cfe2;
-
+  --edubg-color:rgba(0, 0, 0, 0.248);
 }
 
 .darkmode{
@@ -11,6 +11,7 @@
   --text-color:#F1F1F1;
   --first-color:#1E1E2F;
   --second-color:#2B2B3D;
+  --edubg-color: rgba(129, 129, 129, 0.231);
 }
 /* 
 #loader{
@@ -65,6 +66,36 @@
     }
 } */
 
+#toggle{
+    background-color:var(--base-color);
+    color: var(--text-color)!important;
+    background: linear-gradient(135deg, var(--first-color),var(--second-color));
+}
+
+#theme-switch{
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  position: fixed;
+  z-index: 999;
+}
+
+#theme-switch img{
+  fill:var(--text-color);
+}
+
+#theme-switch img:last-child{
+  display: none;
+}
+
+.darkmode #theme-switch img:first-child{
+  display: none;
+}
+
+.darkmode #theme-switch img:last-child{
+  display: block;
+}
+
 .imgFloat{
   display: inline-block;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -78,7 +109,7 @@
 }
 
 .txt{
-  color: var(--text-color);
+  color: var(--text-color) !important;
 }
 
 .card {
@@ -163,5 +194,21 @@ a[href^="mailto:"] {
   cursor: pointer;
 }
 
+#education{
+    min-height: 100vh;
+    background-color:var(--base-color);
+    color: var(--text-color) !important;
+    font-family: 'Inter', sans-serif !important;
+    background: linear-gradient(135deg,var(--first-color),var(--second-color)); 
+}
 
+#edu{
+  background-color: var(--edubg-color);
+  color: var(--text-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+#edu:hover{
+  transform: translateY(-20px);
+  box-shadow: var(--second-color);
+}

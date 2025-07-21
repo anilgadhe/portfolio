@@ -17,7 +17,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="darkmode">
     <!-- <div id="loader">
         <h1>Hey!!!</h1>
         <h1>Welcome To</h1>
@@ -27,7 +27,7 @@
     <div id="main">
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">Anil_Gade</a>
+                <a class="navbar-brand txt" href="#">Anil_Gade</a>
                 <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -42,6 +42,9 @@
                             <a class="nav-link  txt" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link txt" href="#education">Education</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link txt" href="#skills">Skills</a>
                         </li>
                         <li class="nav-item">
@@ -51,6 +54,12 @@
                 </div>
             </div>
         </nav>
+        <div id="toggle" class="d-flex justify-content-end">
+            <button class="mx-4" id="theme-switch">
+                <img src="./media/images/fill-logo.svg" alt="darklogo">
+                <img src="./media/images/sun.svg" alt="sunlogo">
+            </button>
+        </div>
         <section id="hero" class="d-flex align-items-center justify-content-center text-center">
             <div class="container pt-md-5 pt-sm-5">
                 <img src="./media/images/anilpic.jpg" width="150"
@@ -171,6 +180,75 @@
             </div>
         </div>
 
+        <div id="education" class="container-fluid p-5">
+            <h2 class="text-center  txt pt-5">Education</h2>
+
+            <div id="edu" class="p-3 d-grid container rounded-2 mt-5">
+                <a href="https://nareshit.in/" class="text-decoration-none">
+                    <div class="row">
+                        <div class="col-1 col-lg-1 border-end">
+                            <img src="./media/images/nit-logo.png" height="80px" alt="Naresh-IT">
+                        </div>
+                        <div class="col-11 col-lg-11">
+                            <div class="d-flex justify-content-between txt">
+                                <div>
+                                    <p><b>Naresh I Technology</b></p>
+                                    <p>fullStack web development</p>
+                                </div>
+                                <div>
+                                    <p>2025-2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div id="edu" class="p-3 d-grid container rounded-2 mt-5">
+                <a href="https://mpgi.ac.in/" class="text-decoration-none">
+                    <div class="row">
+                        <div class="col-1 col-lg-1 border-end">
+                            <img src="./media/images/mpgi.jpg" height="80px" width="90" alt="university">
+                        </div>
+                        <div class="col-11 col-lg-11">
+                            <div class="d-flex justify-content-between txt">
+                                <div>
+                                    <p><b>Matoshree pratisthan Group of Institution Nanded</b></p>
+                                    <p>Bachelor's of Technology (Computer Science & technology)</p>
+                                </div>
+                                <div>
+                                    <p>2021-2025</p>
+                                    <span>CGPA:7.8</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div id="edu" class="p-3 d-grid container rounded-2 mt-5">
+                <a href="https://ymnnanded.in/" class="text-decoration-none">
+                    <div class="row">
+                        <div class="col-1 col-lg-1 border-end">
+                            <img src="./media/images/university.jpg" height="80px" alt="university">
+                        </div>
+                        <div class="col-11 col-lg-11">
+                            <div class="d-flex justify-content-between txt">
+                                <div>
+                                    <p><b>Yeshwant Mahavidhyalay Nanded</b></p>
+                                    <p>Higher Secondary</p>
+                                </div>
+                                <div>
+                                    <p>2019-2021</p>
+                                    <span>Score:90%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
         <section class="py-5" id="skills">
             <h2 class="text-center mb-5  txt">Skills</h2>
             <div class="container">
@@ -281,12 +359,12 @@
 
                             <div class="d-grid justify-content-center align-items-center p-2">
                                 <div class="row">
-                                    <div class="col-4  rounded-2 text-center fs-1"><span
+                                    <div class="col-4  rounded-2 text-center fs-1 txt"><span
                                             class="bi bi-telephone "></span></div>
                                     <div class="col-8 text-primary fs-6">
                                         <span class="text-secondary ">Call US</span>
-                                        <a href="tel:+919021391440"
-                                            class="text-decoration-none txt fs-5">+919021391440 &nbsp;
+                                        <a href="tel:+919021391440" class="text-decoration-none txt fs-5">+919021391440
+                                            &nbsp;
                                             &nbsp; &nbsp;
                                             &nbsp;</a>
                                     </div>
@@ -295,7 +373,7 @@
 
                             <div class="d-grid justify-content-center align-items-center p-2">
                                 <div class="row">
-                                    <div class="col-4  text-center fs-1"><span class="bi bi-geo-alt "></span>
+                                    <div class="col-4  text-center fs-1 txt"><span class="bi bi-geo-alt "></span>
                                     </div>
                                     <div class="col-8 text-primary ">
                                         <span class="text-secondary fs-5">Location</span><br>
@@ -306,12 +384,16 @@
 
                             <div class="txt">Social info</div>
                             <div class="d-flex justify-content-center align-items-center mt-3">
-                                <div class="rounded-bottom-circle bg-gradient mx-3"><a href="www.linkedin.com/in/anil-gade-02773024a" class="txt"><span
+                                <div class="rounded-bottom-circle bg-gradient mx-3"><a
+                                        href="www.linkedin.com/in/anil-gade-02773024a" class="txt"><span
                                             class="bi bi-linkedin mx-4"></span></a>
                                 </div>
-                                <div class="rounded-bottom-circle bg-gradient mx-3"><a href="https://github.com/anilgadhe"  class="txt " ><span class="bi bi-github mx-4"></span></a>
+                                <div class="rounded-bottom-circle bg-gradient mx-3"><a
+                                        href="https://github.com/anilgadhe" class="txt "><span
+                                            class="bi bi-github mx-4"></span></a>
                                 </div>
-                                <div class="rounded-bottom-circle bg-gradient mx-3"><a href="https://x.com/gadeanil3114"  class="txt"><span class="bi bi-twitter-x mx-4"></span></a>
+                                <div class="rounded-bottom-circle bg-gradient mx-3"><a href="https://x.com/gadeanil3114"
+                                        class="txt"><span class="bi bi-twitter-x mx-4"></span></a>
                                 </div>
                             </div>
                         </div>
@@ -341,12 +423,15 @@
                 </div>
 
                 <div class="mt-5">
-                    <ul class="d-flex justify-content-center align-items-center gap-5 pt-5">
+                    <ul class="d-flex justify-content-center align-items-center gap-3 pt-5 pb-sm-4">
                         <li class="nav-item">
                             <a class="nav-link txt" href="#hero">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link txt" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link txt" href="#education">Education</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link txt" href="#skills">Skills</a>
