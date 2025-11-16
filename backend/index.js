@@ -37,7 +37,7 @@ try {
      })
 
      await newUser.save();
-     res.status(200).json({msg:"resgisterd successfully!",user:newUser});
+     res.status(200).json({msg:"resgisterd successfully!",user:newUser.userName});
 } catch (error) {
     res.status(400).json(error);
 }
