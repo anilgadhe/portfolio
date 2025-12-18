@@ -40,7 +40,7 @@ app.post("/register", async (req, res) => {
     await newUser.save();
 
     
-    res.status(200).json({ msg: "Message submitted successfully ✅" });
+    res.status(200).json({ msg: "Message submitted successfully ✅",user:userName });
 
     
     transporter.sendMail({
