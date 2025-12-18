@@ -29,7 +29,7 @@ document.getElementById("formdata").addEventListener("submit", (e) => {
         message: document.getElementById("message").value,
     }
 
-    fetch("https://portfolio-0a84.onrender.com/register", {
+    fetch("http://localhost:8000/register", {
         method: "post",
         headers: {
             "Content-Type": "application/json"

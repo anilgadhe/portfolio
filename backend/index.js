@@ -28,29 +28,36 @@ app.get("/", (req, res) => {
 })
 
 app.post("/register", async (req, res) => {
-    try {
-        const { userName, email, message } = req.body;
+  try {
+    const { userName, email, message } = req.body;
 
-        const newUser = new User({
-            userName,
-            email,
-            message,
-        })
-
-      await transporter.sendMail({
-            from: "gadheanil57@gmail.com",
-            to: "gadheanil57@gmail.com",
-            replyTo: email,
-            subject: `New message from ${userName}`,
-            text: `You received a new message from ${userName} (${email}):\n\n${message}`
-        })
-        
-        await newUser.save();
-        res.status(200).json({ msg: "resgisterd successfully!", user: newUser.userName });
-    } catch (error) {
-        res.status(400).json(error);
+    if (!userName || !email || !message) {
+      return res.status(400).json({ msg: "All fields are required" });
     }
-})
+
+    
+    const newUser = new User({ userName, email, message });
+    await newUser.save();
+
+    
+    res.status(200).json({ msg: "Message submitted successfully ✅" });
+
+    
+    transporter.sendMail({
+      from: process.env.MAIL_USER,
+      to: process.env.MAIL_USER,
+      replyTo: email,
+      subject: `New message from ${userName}`,
+      text: `You received a new message from ${userName} (${email}):\n\n${message}`,
+    }).catch(err => {
+      console.error("Mail error:", err);
+    });
+
+  } catch (error) {
+    console.error("REGISTER ERROR:", error);
+    res.status(500).json({ msg: "Server error" });
+  }
+});
 
 app.use((req, res) => {
     res.status(400).json("page Not Found");
