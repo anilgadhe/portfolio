@@ -5,7 +5,7 @@ const User = require("./models/user");
 const mongoose = require("mongoose");
 const transporter = require("./utils/forMail");
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 
 
