@@ -21,7 +21,8 @@ connection(process.env.Mongo_URL).then(() => {
 app.use(
   cors({
     origin: "https://anil-port-folio-eight.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE","OPTIONS"],
+     allowedHeaders: ["Content-Type", "Authorization"], 
     credentials: true, // if you want cookies/auth
   })
 );
