@@ -18,12 +18,23 @@ connection(process.env.Mongo_URL).then(() => {
 
   })
 
+const allowedOrigins = [
+  "https://anil-port-folio-eight.vercel.app", // production frontend
+  "http://localhost:5173",                     // local dev
+];
+
 app.use(
   cors({
-    origin: "https://anil-port-folio-eight.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE","OPTIONS"],
-     allowedHeaders: ["Content-Type", "Authorization"], 
-    credentials: true, // if you want cookies/auth
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true); // allow non-browser requests (Postman)
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS not allowed"));
+      }
+    },
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
   })
 );
 
