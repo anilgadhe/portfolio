@@ -10,21 +10,28 @@ const PORT = process.env.PORT || 8000;
 
 
 connection(process.env.Mongo_URL).then(() => {
-    console.log("successfully connected with atlas");
+  console.log("successfully connected with atlas");
 
 })
-    .catch((err) => {
-        console.log(`failed to connect: ${err}`);
+  .catch((err) => {
+    console.log(`failed to connect: ${err}`);
 
-    })
+  })
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://anil-port-folio-eight.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // if you want cookies/auth
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
 app.get("/", (req, res) => {
-    res.send("home route");
+  res.send("home route");
 })
 
 app.post("/register", async (req, res) => {
@@ -35,14 +42,14 @@ app.post("/register", async (req, res) => {
       return res.status(400).json({ msg: "All fields are required" });
     }
 
-    
+
     const newUser = new User({ userName, email, message });
     await newUser.save();
 
-    
-    res.status(200).json({ msg: "Message submitted successfully ✅",user:userName });
 
-    
+    res.status(200).json({ msg: "Message submitted successfully ✅", user: userName });
+
+
     transporter.sendMail({
       from: process.env.MAIL_USER,
       to: process.env.MAIL_USER,
@@ -60,16 +67,16 @@ app.post("/register", async (req, res) => {
 });
 
 app.use((req, res) => {
-    res.status(400).json("page Not Found");
+  res.status(400).json("page Not Found");
 })
 
 
 async function connection(url) {
-    await mongoose.connect(url);
+  await mongoose.connect(url);
 }
 
 app.listen(PORT, () => {
-    console.log(`server is running on ${PORT}`);
+  console.log(`server is running on ${PORT}`);
 
 })
 
